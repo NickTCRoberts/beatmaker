@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: white;
+  background-color: black;
+}
+
+i,
+svg {
+  pointer-events: none;
+}
+
+/* SEQUENCER CONTAINER DIV */
+
+.sequencer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* PADS */
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+
+.kick-pad {
+  background-color: #0f7173;
+}
+
+.snare-pad {
+  background-color: #b7f0ad;
+}
+
+.hihat-pad {
+  background-color: #d2ff96;
+}
+
+/* ACTIVE PADS */
+
+.kick-pad.active {
+  background-color: #85e2e4;
+}
+
+.snare-pad.active {
+  background-color: #58f13d;
+}
+
+.hihat-pad.active {
+  background-color: #eece63;
+}
+
+/* KICK/SNARE/HIHAT TRACK CONTAINER */
+
+.kick-track,
+.snare-track,
+.hihat-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 80%;
+  margin-top: 5rem;
+}
+
+.kick,
+.snare,
+.hihat {
+  display: flex;
+}
+
+/* CONTROLS CONTAINER */
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  margin: 0 2rem;
+}
+
+.controls > * {
+  justify-self: left;
+  align-self: center;
+}
+
+/* STYLING */
+
+.controls button {
+  margin-left: 1rem;
+  padding: 1rem;
+  border: none;
+  background-color: #f15025;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.mute.active {
+  background-color: #f2b8a8;
+}
+
+.pad {
+  transition: all 0.5s ease;
+}
+
+.play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+select {
+  margin-left: 1rem;
+  padding: 0.875rem;
+  font-size: 1rem;
+}
+
+/* TEMPO */
+
+.tempo {
+  margin: 3rem;
+  width: 20%;
+}
+
+.tempo-slider {
+  margin: 1rem 0;
+  padding: 0.2rem;
+  width: 100%;
+  position: relative;
+  -webkit-appearance: none;
+  background-color: #dcedb9;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.tempo p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* ANIMATION */
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
